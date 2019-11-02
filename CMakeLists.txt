@@ -25,6 +25,9 @@ include(CMake/global_config.cmake)
 
 config_cxx_flags()
 
+#fix for ARM
+set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
+
 # include os specific macros
 # macro definition located at "CMake/global_config.cmake"
 include(CMake/include_os.cmake)
